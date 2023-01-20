@@ -13,13 +13,13 @@ def get_valid_word(words) -> str:
 def hangman_game():
     max_attempts = 6
     word = get_valid_word(words)  # Слово, которое нужно угадать
-    Length_word = "_" * len(word)  # Одна черточка для каждой буквы в слове, которое нужно угадать
+    length_word = "_" * len(word)  # Одна черточка для каждой буквы в слове, которое нужно угадать
     fails = 0  # Количество неверных предположений, сделанных игроком
     used = []  # Буквы уже угаданы
 
-    while fails < max_attempts and Length_word != word:
+    while fails < max_attempts and length_word != word:
 
-        print(f"\nВы использовали следующие буквы: {used} \nНа данный момент слово выглядит так:\n {Length_word}")
+        print(f"\nВы использовали следующие буквы: {used} \nНа данный момент слово выглядит так:\n {length_word}")
 
         guess = input("\nВведите свое предположение: ")  # Пользователь вводит предполагаемую букву
 
@@ -36,8 +36,8 @@ def hangman_game():
                 if guess == word[i]:
                     new += guess
                 else:
-                    new += Length_word[i]
-            Length_word = new
+                    new += length_word[i]
+            length_word = new
 
         else:
             fails += 1
