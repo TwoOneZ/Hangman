@@ -2,7 +2,7 @@ from words import words
 import random
 
 
-def get_valid_word(words):
+def get_valid_word(words) -> str:
     word = random.choice(words)
     while "-" in word or " " in word:
         word = random.choice(words)
